@@ -1,0 +1,22 @@
+{
+  "name": "UICollectionView-YCHLayoutCacheCell",
+  "version": "0.1.0",
+  "summary": "A short description of UICollectionView-YCHLayoutCacheCell.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ych.wang@outlook.com/UICollectionView-YCHLayoutCacheCell",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ych.wang@outlook.com": "ych.wang@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/ych.wang@outlook.com/UICollectionView-YCHLayoutCacheCell.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Classes/**/*"
+}

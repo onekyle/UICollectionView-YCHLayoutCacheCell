@@ -1,0 +1,6 @@
+framework module UICollectionView_YCHLayoutCacheCell {
+  umbrella header "UICollectionView-YCHLayoutCacheCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

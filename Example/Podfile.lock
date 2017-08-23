@@ -1,0 +1,16 @@
+PODS:
+  - UICollectionView-YCHLayoutCacheCell (0.1.0)
+
+DEPENDENCIES:
+  - UICollectionView-YCHLayoutCacheCell (from `../`)
+
+EXTERNAL SOURCES:
+  UICollectionView-YCHLayoutCacheCell:
+    :path: ../
+
+SPEC CHECKSUMS:
+  UICollectionView-YCHLayoutCacheCell: fa5029828acf14ac5566af5d98e75793fa64b1f9
+
+PODFILE CHECKSUM: 0ace91df9856a26747958232a5cca22ac759582b
+
+COCOAPODS: 1.2.1
