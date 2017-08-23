@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UICollectionView-YCHLayoutCacheCell_Example' do
+  pod 'UICollectionView-YCHLayoutCacheCell', :path => '../'
+
+  target 'UICollectionView-YCHLayoutCacheCell_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
