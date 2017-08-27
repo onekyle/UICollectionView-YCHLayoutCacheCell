@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		13ADEF6E1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 13ADEF6C1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.h */; };
 		13ADEF6F1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADEF6D1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.m */; };
+		13ADEF721F53004100482078 /* UICollectionView+YCHKeyedCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 13ADEF701F53004100482078 /* UICollectionView+YCHKeyedCache.h */; };
+		13ADEF731F53004100482078 /* UICollectionView+YCHKeyedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADEF711F53004100482078 /* UICollectionView+YCHKeyedCache.m */; };
 		1DE619D7F12CFB93607C9FF9AC48D2A4 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9524B4BD891436BB992CA5834326F5C7 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B6B85892E4F513BC8888B892B165419 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45381268C86B59DDBCA8E54FF7A96174 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C021C1CB42D1708A2F03DEDB4FC7DCD /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EF950CA2C879972C67A271AA787910 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m */; };
@@ -35,6 +37,8 @@
 		0FF1473E856E563B8BD00E5C0C125542 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		13ADEF6C1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHIndexPathCache.h"; sourceTree = "<group>"; };
 		13ADEF6D1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHIndexPathCache.m"; sourceTree = "<group>"; };
+		13ADEF701F53004100482078 /* UICollectionView+YCHKeyedCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHKeyedCache.h"; sourceTree = "<group>"; };
+		13ADEF711F53004100482078 /* UICollectionView+YCHKeyedCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHKeyedCache.m"; sourceTree = "<group>"; };
 		13EF950CA2C879972C67A271AA787910 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m"; sourceTree = "<group>"; };
 		159452BCC141E93B0EBF14314ABBC8E2 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		24A54DE1248EB49DC3D3AA74327DEEE1 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			children = (
 				13ADEF6C1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.h */,
 				13ADEF6D1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.m */,
+				13ADEF701F53004100482078 /* UICollectionView+YCHKeyedCache.h */,
+				13ADEF711F53004100482078 /* UICollectionView+YCHKeyedCache.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B6B85892E4F513BC8888B892B165419 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h in Headers */,
+				13ADEF721F53004100482078 /* UICollectionView+YCHKeyedCache.h in Headers */,
 				13ADEF6E1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +342,7 @@
 			files = (
 				13ADEF6F1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.m in Sources */,
 				B87F50519B47B759EFA3B2511A7E9A49 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-dummy.m in Sources */,
+				13ADEF731F53004100482078 /* UICollectionView+YCHKeyedCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
