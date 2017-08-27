@@ -30,3 +30,8 @@
 
 @end
 
+@interface UICollectionView (YCHIndexPathCacheInvalidation)
+
+- (void)ych_reloadDataWithoutInvalidateIndexPathLengthCache;
+
+@end
