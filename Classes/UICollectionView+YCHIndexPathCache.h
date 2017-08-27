@@ -12,15 +12,15 @@
 
 @property (nonatomic, assign, getter=isAutomaticallyEnableed) BOOL automaticallyEnableed;
 
-- (BOOL)existsLengthAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)existsSizeAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void)cacheLength:(CGFloat)length byIndexPath:(NSIndexPath *)indexPath;
+- (void)cacheSize:(CGSize)size byIndexPath:(NSIndexPath *)indexPath;
 
-- (CGFloat)lengthForIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)sizeForIndexPath:(NSIndexPath *)indexPath;
 
-- (void)invalidateLengthAtIndexPath:(NSIndexPath *)indexPath;
+- (void)invalidateSizeAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void)invalidateAllLengthCache;
+- (void)invalidateAllSizeCache;
 
 @end
 
@@ -28,10 +28,12 @@
 
 @property (nonatomic, strong, readonly) YCHIndexPathCache *ych_indexPathCache;
 
+@property (nonatomic, strong, readonly) NSMutableDictionary *tempCells;
+
 @end
 
 @interface UICollectionView (YCHIndexPathCacheInvalidation)
 
-- (void)ych_reloadDataWithoutInvalidateIndexPathLengthCache;
+- (void)ych_reloadDataWithoutInvalidateIndexPathSizeCache;
 
 @end

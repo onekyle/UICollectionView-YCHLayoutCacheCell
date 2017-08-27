@@ -10,20 +10,20 @@
 
 @interface YCHKeyedCache : NSObject
 
-- (BOOL)existsLengthForKey:(id<NSCopying>)key;
+- (BOOL)existsSizeForKey:(id<NSCopying>)key;
 
-- (void)cacheLength:(CGFloat)length byKey:(id<NSCopying>)key;
+- (void)cacheSize:(CGSize)size byKey:(id<NSCopying>)key;
 
-- (CGFloat)LengthForKey:(id<NSCopying>)key;
+- (CGSize)sizeForKey:(id<NSCopying>)key;
 
-- (void)invalidateLengthForKey:(id<NSCopying>)key;
+- (void)invalidateSizeForKey:(id<NSCopying>)key;
 
-- (void)invalidateAllLengthCache;
+- (void)invalidateAllSizeCache;
 
 @end
 
 @interface UICollectionView (YCHKeyedCache)
 
-@property (nonatomic, strong, readonly) YCHKeyedCache *ych_keyedLengthCache;
+@property (nonatomic, strong, readonly) YCHKeyedCache *ych_keyedSizeCache;
 
 @end

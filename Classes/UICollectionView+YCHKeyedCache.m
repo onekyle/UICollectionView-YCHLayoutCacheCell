@@ -8,10 +8,11 @@
 
 #import "UICollectionView+YCHKeyedCache.h"
 #import <objc/runtime.h>
+#import "YCHLayoutCacheCellMacros.h"
 
 @interface YCHKeyedCache ()
 
-@property (nonatomic, strong) NSMutableDictionary<id<NSCopying>, NSNumber *> *LengthsByKey;
+@property (nonatomic, strong) NSMutableDictionary<id<NSCopying>, NSValue *> *sizesByKey;
 
 @end
 
@@ -21,46 +22,42 @@
 {
     self = [super init];
     if (self) {
-        _LengthsByKey = [NSMutableDictionary dictionary];
+        _sizesByKey = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
-- (BOOL)existsLengthForKey:(id<NSCopying>)key
+- (BOOL)existsSizeForKey:(id<NSCopying>)key
 {
-    NSNumber *number = self.LengthsByKey[key];
-    return number && number.intValue != -1;
+    NSValue *number = self.sizesByKey[key];
+    return number && ![number isEqualToValue:YCHLayoutCellInvalidateSizeValue];
 }
 
-- (void)cacheLength:(CGFloat)length byKey:(id<NSCopying>)key
+- (void)cacheSize:(CGSize)size byKey:(id<NSCopying>)key
 {
-    self.LengthsByKey[key] = @(length);
+    self.sizesByKey[key] = YHCLayoutSizeValueMake(size);
 }
 
-- (CGFloat)LengthForKey:(id<NSCopying>)key
+- (CGSize)sizeForKey:(id<NSCopying>)key
 {
-#if CGFLOAT_IS_DOUBLE
-    return [self.LengthsByKey[key] doubleValue];
-#else
-    return [self.LengthsByKey[key] floatValue];
-#endif
+    return self.sizesByKey[key].CGSizeValue;
 }
 
-- (void)invalidateLengthForKey:(id<NSCopying>)key
+- (void)invalidateSizeForKey:(id<NSCopying>)key
 {
-    [self.LengthsByKey removeObjectForKey:key];
+    [self.sizesByKey removeObjectForKey:key];
 }
 
-- (void)invalidateAllLengthCache
+- (void)invalidateAllSizeCache
 {
-    [self.LengthsByKey removeAllObjects];
+    [self.sizesByKey removeAllObjects];
 }
 
 @end
 
 @implementation UICollectionView (YCHKeyedCache)
 
-- (YCHKeyedCache *)ych_keyedLengthCache
+- (YCHKeyedCache *)ych_keyedSizeCache
 {
     YCHKeyedCache *cache = objc_getAssociatedObject(self, _cmd);
     if (!cache) {

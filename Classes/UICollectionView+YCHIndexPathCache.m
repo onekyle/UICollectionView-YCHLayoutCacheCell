@@ -8,12 +8,13 @@
 
 #import "UICollectionView+YCHIndexPathCache.h"
 #import <objc/runtime.h>
+#import "YCHLayoutCacheCellMacros.h"
 
-typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySection;
+typedef NSMutableArray <NSMutableArray<NSValue *> *> YCHIndexPathSizesBySection;
 
 @interface YCHIndexPathCache ()
 
-@property (nonatomic, strong) YCHIndexPathLengthsBySection *lengthsBySection;
+@property (nonatomic, strong) YCHIndexPathSizesBySection *sizesBySection;
 
 @end
 
@@ -23,44 +24,40 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
 {
     self = [super init];
     if (self) {
-        _lengthsBySection = [NSMutableArray array];
+        _sizesBySection = [NSMutableArray array];
     }
     return self;
 }
 
-- (BOOL)existsLengthAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)existsSizeAtIndexPath:(NSIndexPath *)indexPath
 {
     [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
-    NSNumber *number = self.lengthsBySection[indexPath.section][indexPath.item];
-    return ![number isEqualToNumber:@-1];
+    NSValue *size = self.sizesBySection[indexPath.section][indexPath.item];
+    return size && ![size isEqualToValue:YCHLayoutCellInvalidateSizeValue];
 }
 
-- (void)cacheLength:(CGFloat)length byIndexPath:(NSIndexPath *)indexPath
+- (void)cacheSize:(CGSize)size byIndexPath:(NSIndexPath *)indexPath
 {
     self.automaticallyEnableed = YES;
     [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
-    self.lengthsBySection[indexPath.section][indexPath.item] = @(length);
+    self.sizesBySection[indexPath.section][indexPath.item] = [NSValue valueWithCGSize:size];
 }
 
-- (CGFloat)lengthForIndexPath:(NSIndexPath *)indexPath
+- (CGSize)sizeForIndexPath:(NSIndexPath *)indexPath
 {
     [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
-    NSNumber *number = self.lengthsBySection[indexPath.section][indexPath.item];
-#if CGFLOAT_IS_DOUBLE
-    return number.doubleValue;
-#else
-    return number.floatValue;
-#endif
+    NSValue *size = self.sizesBySection[indexPath.section][indexPath.item];
+    return size.CGSizeValue;
 }
 
-- (void)invalidateLengthAtIndexPath:(NSIndexPath *)indexPath
+- (void)invalidateSizeAtIndexPath:(NSIndexPath *)indexPath
 {
     [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
-    self.lengthsBySection[indexPath.section][indexPath.item] = @-1;
+    self.sizesBySection[indexPath.section][indexPath.item] = YCHLayoutCellInvalidateSizeValue;
 }
 
-- (void)invalidateAllLengthCache {
-    [self.lengthsBySection removeAllObjects];
+- (void)invalidateAllSizeCache {
+    [self.sizesBySection removeAllObjects];
 }
 
 
@@ -76,18 +73,18 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
 - (void)buildSectionsIfNeeded:(NSInteger)targetSection
 {
     for (NSInteger section = 0; section <= targetSection; ++section) {
-        if (section >= _lengthsBySection.count) {
-            _lengthsBySection[section] = [NSMutableArray array];
+        if (section >= _sizesBySection.count) {
+            _sizesBySection[section] = [NSMutableArray array];
         }
     }
 }
 
 - (void)buildItemsIfNeeded:(NSInteger)targetItem inExistSection:(NSInteger)section
 {
-    NSMutableArray<NSNumber *> *lengthsByItem = _lengthsBySection[section];
+    NSMutableArray<NSValue *> *sizesByItem = _sizesBySection[section];
     for (NSInteger item = 0; item <= targetItem; ++item) {
-        if (item >= lengthsByItem.count) {
-            lengthsByItem[item] = @-1;
+        if (item >= sizesByItem.count) {
+            sizesByItem[item] = YCHLayoutCellInvalidateSizeValue;
         }
     }
 }
@@ -146,7 +143,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     }
 }
 
-- (void)ych_reloadDataWithoutInvalidateIndexPathLengthCache
+- (void)ych_reloadDataWithoutInvalidateIndexPathSizeCache
 {
     [self ych_reloadData];
 }
@@ -156,7 +153,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     [self ych_registerNib:nib forCellWithReuseIdentifier:identifier];
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         UICollectionViewCell *tempCell = [[nib instantiateWithOwner:nil options:nil] lastObject];
-        self.templeCells[identifier] = tempCell;
+        self.tempCells[identifier] = tempCell;
     }
 }
 
@@ -165,14 +162,14 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     [self ych_registerClass:cellClass forCellWithReuseIdentifier:identifier];
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         UICollectionViewCell *tempCell = [[cellClass alloc] initWithFrame:CGRectZero];
-        self.templeCells[identifier] = tempCell;
+        self.tempCells[identifier] = tempCell;
     }
 }
 
 - (void)ych_reloadData
 {
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
-        [self.ych_indexPathCache.lengthsBySection removeAllObjects];
+        [self.ych_indexPathCache.sizesBySection removeAllObjects];
     }
     [self ych_reloadData];
 }
@@ -182,7 +179,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [sections enumerateIndexesUsingBlock:^(NSUInteger section, BOOL * _Nonnull stop) {
             [self.ych_indexPathCache buildSectionsIfNeeded:section];
-            [self.ych_indexPathCache.lengthsBySection[section] removeAllObjects];
+            [self.ych_indexPathCache.sizesBySection[section] removeAllObjects];
         }];
     }
     [self ych_reloadSections:sections];
@@ -193,7 +190,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [sections enumerateIndexesUsingBlock:^(NSUInteger section, BOOL * _Nonnull stop) {
             [self.ych_indexPathCache buildSectionsIfNeeded:section];
-            [self.ych_indexPathCache.lengthsBySection insertObject:[NSMutableArray array] atIndex:section];
+            [self.ych_indexPathCache.sizesBySection insertObject:[NSMutableArray array] atIndex:section];
         }];
     }
     [self ych_insertSections:sections];
@@ -204,7 +201,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [self.ych_indexPathCache buildSectionsIfNeeded:section];
         [self.ych_indexPathCache buildSectionsIfNeeded:newSection];
-        [self.ych_indexPathCache.lengthsBySection exchangeObjectAtIndex:section withObjectAtIndex:newSection];
+        [self.ych_indexPathCache.sizesBySection exchangeObjectAtIndex:section withObjectAtIndex:newSection];
     }
     [self ych_moveSection:section toSection:newSection];
 }
@@ -214,7 +211,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [sections enumerateIndexesUsingBlock:^(NSUInteger section, BOOL * _Nonnull stop) {
             [self.ych_indexPathCache buildSectionsIfNeeded:section];
-            [self.ych_indexPathCache.lengthsBySection removeObjectAtIndex:section];
+            [self.ych_indexPathCache.sizesBySection removeObjectAtIndex:section];
         }];
     }
     [self ych_deleteSections:sections];
@@ -225,7 +222,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [self.ych_indexPathCache buildCachesAtIndexPathsIfNeeded:indexPaths];
         [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull indexPath, NSUInteger idx, BOOL * _Nonnull stop) {
-            self.ych_indexPathCache.lengthsBySection[indexPath.section][indexPath.item] = @-1;
+            self.ych_indexPathCache.sizesBySection[indexPath.section][indexPath.item] = YCHLayoutCellInvalidateSizeValue;
         }];
     }
     [self ych_reloadItemsAtIndexPaths:indexPaths];
@@ -236,7 +233,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [self.ych_indexPathCache buildCachesAtIndexPathsIfNeeded:indexPaths];
         [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull indexPath, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.ych_indexPathCache.lengthsBySection[indexPath.section] insertObject:@-1 atIndex:indexPath.item];
+            [self.ych_indexPathCache.sizesBySection[indexPath.section] insertObject:YCHLayoutCellInvalidateSizeValue atIndex:indexPath.item];
         }];
     }
     [self ych_insertItemsAtIndexPaths:indexPaths];
@@ -258,7 +255,7 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
         }];
         
         [mutableIndexSetsToRemove enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull sectionNumber, NSMutableIndexSet * _Nonnull indexSet, BOOL * _Nonnull stop) {
-            [self.ych_indexPathCache.lengthsBySection[sectionNumber.integerValue] removeObjectsAtIndexes:indexSet];
+            [self.ych_indexPathCache.sizesBySection[sectionNumber.integerValue] removeObjectsAtIndexes:indexSet];
         }];
     }
     [self ych_deleteItemsAtIndexPaths:indexPaths];
@@ -268,31 +265,26 @@ typedef NSMutableArray <NSMutableArray<NSNumber *> *> YCHIndexPathLengthsBySecti
 {
     if (self.ych_indexPathCache.isAutomaticallyEnableed) {
         [self.ych_indexPathCache buildCachesAtIndexPathsIfNeeded:@[indexPath, newIndexPath]];
-        YCHIndexPathLengthsBySection *cachedLengths = self.ych_indexPathCache.lengthsBySection;
-        NSMutableArray<NSNumber *> *sourceItems = cachedLengths[indexPath.section];
-        NSMutableArray<NSNumber *> *destinationItems = cachedLengths[newIndexPath.section];
-        NSNumber *sourceValue = sourceItems[indexPath.item];
-        NSNumber *destinationValue = destinationItems[newIndexPath.item];
+        YCHIndexPathSizesBySection *cachedSizes = self.ych_indexPathCache.sizesBySection;
+        NSMutableArray<NSValue *> *sourceItems = cachedSizes[indexPath.section];
+        NSMutableArray<NSValue *> *destinationItems = cachedSizes[newIndexPath.section];
+        NSValue *sourceValue = sourceItems[indexPath.item];
+        NSValue *destinationValue = destinationItems[newIndexPath.item];
         sourceItems[indexPath.item] = destinationValue;
         destinationItems[indexPath.item] = sourceValue;
     }
     [self ych_moveItemAtIndexPath:indexPath toIndexPath:newIndexPath];
 }
 
-- (NSMutableDictionary *)templeCells
+- (NSMutableDictionary *)tempCells
 {
-    NSMutableDictionary *templeCells = objc_getAssociatedObject(self, _cmd);
-    if (templeCells == nil) {
-        templeCells = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, _cmd, templeCells,
+    NSMutableDictionary *tempCells = objc_getAssociatedObject(self, _cmd);
+    if (tempCells == nil) {
+        tempCells = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(self, _cmd, tempCells,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    return templeCells;
+    return tempCells;
 }
-
-//- (__kindof UICollectionViewCell *)templeCaculateCellForIdentifier:(NSString *)identifier
-//{
-//    
-//}
 
 @end
