@@ -33,7 +33,7 @@
     return number && ![number isEqualToValue:YCHLayoutCellInvalidateSizeValue];
 }
 
-- (void)cacheSize:(CGSize)size byKey:(id<NSCopying>)key
+- (void)cacheSize:(CGSize)size forKey:(id<NSCopying>)key
 {
     self.sizesByKey[key] = YHCLayoutSizeValueMake(size);
 }

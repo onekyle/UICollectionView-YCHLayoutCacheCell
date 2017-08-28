@@ -8,15 +8,35 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, YCHLayoutCacheCellCalculateType) {
+    YCHLayoutCacheCellCalculateTypeUnknow,
+    YCHLayoutCacheCellCalculateTypeWith,
+    YCHLayoutCacheCellCalculateTypeHeight,
+    YCHLayoutCacheCellCalculateTypeSize,
+};
+
 @interface UICollectionView (YCHLayoutCacheCell)
 
-- (__kindof UICollectionViewCell *)ych_templateCellForReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, assign) BOOL ych_enforceFrameLayout;
 
-- (CGSize)ych_sizeForCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath configuration:(void (^)(id cell))configuration;
+@property (nonatomic, assign) BOOL ych_isTempLayoutCell;
 
-- (CGSize)ych_sizeForCellWithIdentifier:(NSString *)identifier cacheByIndexPath:(NSIndexPath *)indexPath configuration:(void (^)(id cell))configuration;
+- (CGSize)ych_sizeForCellWithIdentifier:(NSString *)identifier
+                           forIndexPath:(NSIndexPath *)indexPath
+                              fixedSize:(CGSize)fixedSize
+                          configuration:(void (^)(id cell))configuration;
 
-- (CGSize)ych_sizeForCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath cacheByKey:(id<NSCopying>)key configuration:(void (^)(id cell))configuration;
+- (CGSize)ych_sizeForCellWithIdentifier:(NSString *)identifier
+                             cacheByKey:(id<NSCopying>)key
+                             fixedValue:(CGFloat)fixedValue
+                          calculateType:(YCHLayoutCacheCellCalculateType)calculateType
+                          configuration:(void (^)(id cell))configuration;
+
+- (CGSize)ych_sizeForCellWithIdentifier:(NSString *)identifier
+                           forIndexPath:(NSIndexPath *)indexPath
+                             fixedValue:(CGFloat)fixedValue
+                          calculateType:(YCHLayoutCacheCellCalculateType)calculateType
+                          configuration:(void (^)(id cell))configuration;
 
 @end
 

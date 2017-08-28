@@ -36,7 +36,7 @@ typedef NSMutableArray <NSMutableArray<NSValue *> *> YCHIndexPathSizesBySection;
     return size && ![size isEqualToValue:YCHLayoutCellInvalidateSizeValue];
 }
 
-- (void)cacheSize:(CGSize)size byIndexPath:(NSIndexPath *)indexPath
+- (void)cacheSize:(CGSize)size forIndexPath:(NSIndexPath *)indexPath
 {
     self.automaticallyEnableed = YES;
     [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];

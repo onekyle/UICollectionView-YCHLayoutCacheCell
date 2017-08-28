@@ -12,7 +12,7 @@
 
 - (BOOL)existsSizeForKey:(id<NSCopying>)key;
 
-- (void)cacheSize:(CGSize)size byKey:(id<NSCopying>)key;
+- (void)cacheSize:(CGSize)size forKey:(id<NSCopying>)key;
 
 - (CGSize)sizeForKey:(id<NSCopying>)key;
 
