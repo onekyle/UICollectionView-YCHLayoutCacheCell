@@ -28,11 +28,11 @@
 
 @property (nonatomic, strong, readonly) YCHIndexPathCache *ych_indexPathCache;
 
-@property (nonatomic, strong, readonly) NSMutableDictionary *tempCells;
-
 @end
 
 @interface UICollectionView (YCHIndexPathCacheInvalidation)
+
+- (NSMutableDictionary *)tempCells;
 
 - (void)ych_reloadDataWithoutInvalidateIndexPathSizeCache;
 

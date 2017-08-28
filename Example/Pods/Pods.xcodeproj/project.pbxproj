@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13ADEF6E1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 13ADEF6C1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.h */; };
-		13ADEF6F1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADEF6D1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.m */; };
-		13ADEF721F53004100482078 /* UICollectionView+YCHKeyedCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 13ADEF701F53004100482078 /* UICollectionView+YCHKeyedCache.h */; };
-		13ADEF731F53004100482078 /* UICollectionView+YCHKeyedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADEF711F53004100482078 /* UICollectionView+YCHKeyedCache.m */; };
-		13ADEF761F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 13ADEF741F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.h */; };
-		13ADEF771F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADEF751F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.m */; };
+		1829A425B1FA9FDFDE68A5E556193213 /* UICollectionView+YCHIndexPathCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CF21F89DF6DE4EEF2EF3E88E92F4B8 /* UICollectionView+YCHIndexPathCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DE619D7F12CFB93607C9FF9AC48D2A4 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9524B4BD891436BB992CA5834326F5C7 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49029910725BB5B091639B4A160B15D1 /* UICollectionView+YCHLayoutCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A6AA077FD6941CC2D541026CD8CBBB /* UICollectionView+YCHLayoutCacheCell.m */; };
 		4B6B85892E4F513BC8888B892B165419 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45381268C86B59DDBCA8E54FF7A96174 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C021C1CB42D1708A2F03DEDB4FC7DCD /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EF950CA2C879972C67A271AA787910 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m */; };
 		5F95D5BDFCA58690A5654CFC1092014A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		96F1BD9B647379F71FC598DC80145BEE /* UICollectionView-YCHLayoutCacheCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0872F861E2F83D4BE99B88B7645495B3 /* UICollectionView-YCHLayoutCacheCell-dummy.m */; };
+		6FEC31061DBBE2F25F1DC3A07D842E30 /* UICollectionView-YCHLayoutCacheCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C048A75025D5EBAA3AFE540D07BE52B7 /* UICollectionView-YCHLayoutCacheCell-dummy.m */; };
+		81702264AAE6D772DD19F9A88CEF5925 /* UICollectionView+YCHKeyedCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8357A8809D018BE0797B15A904B6C3B8 /* UICollectionView+YCHKeyedCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		966DF2673BE05B4BC06C4D3EA66D6EA6 /* UICollectionView+YCHLayoutCacheCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A06EC64481BFDB249F9C461854C09BA /* UICollectionView+YCHLayoutCacheCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CBD0402EF9B198B125F2E6460627389 /* YCHLayoutCacheCellMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CA27037EC8CD0D06EE28FB46C39F44D3 /* YCHLayoutCacheCellMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A19E5C6BE11E9A0BE14A47871C2AC48A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B87F50519B47B759EFA3B2511A7E9A49 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE084F005B4B3BC067C6A3D283F5053D /* Pods-UICollectionView-YCHLayoutCacheCell_Example-dummy.m */; };
+		DAB99D626D102AB30D0CD1F415EF6883 /* UICollectionView+YCHKeyedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F8DF221C317E15A01AFC72F81D9B39 /* UICollectionView+YCHKeyedCache.m */; };
 		E5BC357DFEDC8E047FB6AF85739C53DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		FC157CDFE351F992F900D55440B5C8A9 /* UICollectionView-YCHLayoutCacheCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E9B99678F0F62104104F2C7CD2D61B /* UICollectionView-YCHLayoutCacheCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F447DFAA0C991B0599B5EEB61341D335 /* UICollectionView-YCHLayoutCacheCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6A99C3548AF2901C676AB67839B2405 /* UICollectionView-YCHLayoutCacheCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB1B0472F1B60E592E6A6C13EADD8622 /* UICollectionView+YCHIndexPathCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 73078CE83DDF3A8C52E3B5895B0338DB /* UICollectionView+YCHIndexPathCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,44 +36,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0872F861E2F83D4BE99B88B7645495B3 /* UICollectionView-YCHLayoutCacheCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView-YCHLayoutCacheCell-dummy.m"; sourceTree = "<group>"; };
+		0A06EC64481BFDB249F9C461854C09BA /* UICollectionView+YCHLayoutCacheCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHLayoutCacheCell.h"; sourceTree = "<group>"; };
 		0FF1473E856E563B8BD00E5C0C125542 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		13ADEF6C1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHIndexPathCache.h"; sourceTree = "<group>"; };
-		13ADEF6D1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHIndexPathCache.m"; sourceTree = "<group>"; };
-		13ADEF701F53004100482078 /* UICollectionView+YCHKeyedCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHKeyedCache.h"; sourceTree = "<group>"; };
-		13ADEF711F53004100482078 /* UICollectionView+YCHKeyedCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHKeyedCache.m"; sourceTree = "<group>"; };
-		13ADEF741F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHLayoutCacheCell.h"; sourceTree = "<group>"; };
-		13ADEF751F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHLayoutCacheCell.m"; sourceTree = "<group>"; };
-		13ADEF791F53189700482078 /* YCHLayoutCacheCellMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCHLayoutCacheCellMacros.h; sourceTree = "<group>"; };
+		11F4DD0581F6A4840DE2C9C757C3E0D3 /* UICollectionView-YCHLayoutCacheCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView-YCHLayoutCacheCell-prefix.pch"; sourceTree = "<group>"; };
 		13EF950CA2C879972C67A271AA787910 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-dummy.m"; sourceTree = "<group>"; };
 		159452BCC141E93B0EBF14314ABBC8E2 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		17BA360DFB71CF7AF0F2810BF90EDC1C /* UICollectionView-YCHLayoutCacheCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "UICollectionView-YCHLayoutCacheCell.modulemap"; sourceTree = "<group>"; };
 		24A54DE1248EB49DC3D3AA74327DEEE1 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-frameworks.sh"; sourceTree = "<group>"; };
-		24E9B99678F0F62104104F2C7CD2D61B /* UICollectionView-YCHLayoutCacheCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView-YCHLayoutCacheCell-umbrella.h"; sourceTree = "<group>"; };
-		2F38DA1581B4821DC04C4426B9CDBA98 /* UICollectionView-YCHLayoutCacheCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "UICollectionView-YCHLayoutCacheCell.modulemap"; sourceTree = "<group>"; };
 		43180AC7466D5C72711C8AEFC2653ED1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45381268C86B59DDBCA8E54FF7A96174 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h"; sourceTree = "<group>"; };
-		487D5D21CFC54C9167E9E8CD9177D8FC /* UICollectionView_YCHLayoutCacheCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICollectionView_YCHLayoutCacheCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C2A9190E59C7E79240ACDCF9A3507F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487D5D21CFC54C9167E9E8CD9177D8FC /* UICollectionView_YCHLayoutCacheCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UICollectionView_YCHLayoutCacheCell.framework; path = "UICollectionView-YCHLayoutCacheCell.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2ADA02A7FFE22D0EE52261BE495788 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		62CF21F89DF6DE4EEF2EF3E88E92F4B8 /* UICollectionView+YCHIndexPathCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHIndexPathCache.h"; sourceTree = "<group>"; };
 		659D60D63DC369FFE29F135722BB8070 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		73078CE83DDF3A8C52E3B5895B0338DB /* UICollectionView+YCHIndexPathCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHIndexPathCache.m"; sourceTree = "<group>"; };
 		75EBABF49EABC66D4BC965A4FC7A3FF5 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		7C13A2FA290136B10D6C9F1244DC08C6 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-resources.sh"; sourceTree = "<group>"; };
-		7F7B5085545B3B982135D2B52B8A956B /* UICollectionView-YCHLayoutCacheCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView-YCHLayoutCacheCell-prefix.pch"; sourceTree = "<group>"; };
+		8357A8809D018BE0797B15A904B6C3B8 /* UICollectionView+YCHKeyedCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YCHKeyedCache.h"; sourceTree = "<group>"; };
+		89F7F968342A942668E0D2C99018DD83 /* UICollectionView-YCHLayoutCacheCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UICollectionView-YCHLayoutCacheCell.xcconfig"; sourceTree = "<group>"; };
 		90E39FD7800F2280A34A2F1A41DE0115 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9451CE8CD6876A17E5829F771FF9E714 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9524B4BD891436BB992CA5834326F5C7 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-umbrella.h"; sourceTree = "<group>"; };
-		AE473D0F18EB1B9E7535F5731711BCF6 /* Pods_UICollectionView_YCHLayoutCacheCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICollectionView_YCHLayoutCacheCell_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE473D0F18EB1B9E7535F5731711BCF6 /* Pods_UICollectionView_YCHLayoutCacheCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UICollectionView_YCHLayoutCacheCell_Example.framework; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2BA9584B2BE1C51E7BDC4AFF924B5F /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-resources.sh"; sourceTree = "<group>"; };
+		B0A6AA077FD6941CC2D541026CD8CBBB /* UICollectionView+YCHLayoutCacheCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHLayoutCacheCell.m"; sourceTree = "<group>"; };
 		BE084F005B4B3BC067C6A3D283F5053D /* Pods-UICollectionView-YCHLayoutCacheCell_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example-dummy.m"; sourceTree = "<group>"; };
-		C72C7D8D314D328BB8FA439FE5A18B7E /* UICollectionView-YCHLayoutCacheCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UICollectionView-YCHLayoutCacheCell.xcconfig"; sourceTree = "<group>"; };
+		C048A75025D5EBAA3AFE540D07BE52B7 /* UICollectionView-YCHLayoutCacheCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView-YCHLayoutCacheCell-dummy.m"; sourceTree = "<group>"; };
+		C3F8DF221C317E15A01AFC72F81D9B39 /* UICollectionView+YCHKeyedCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YCHKeyedCache.m"; sourceTree = "<group>"; };
+		C6A99C3548AF2901C676AB67839B2405 /* UICollectionView-YCHLayoutCacheCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView-YCHLayoutCacheCell-umbrella.h"; sourceTree = "<group>"; };
+		CA27037EC8CD0D06EE28FB46C39F44D3 /* YCHLayoutCacheCellMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YCHLayoutCacheCellMacros.h; sourceTree = "<group>"; };
 		CCDF9C1BFE52C5C6E6F3421620613DC6 /* Pods-UICollectionView-YCHLayoutCacheCell_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D5338261095EF2342C10C3E26C5C2371 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D85AFA40369706074C529C7CACFD14F3 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests.modulemap"; sourceTree = "<group>"; };
-		DA91338E7E6A7F33369079E9952AEF40 /* Pods_UICollectionView_YCHLayoutCacheCell_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICollectionView_YCHLayoutCacheCell_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D85AFA40369706074C529C7CACFD14F3 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests.modulemap"; sourceTree = "<group>"; };
+		DA91338E7E6A7F33369079E9952AEF40 /* Pods_UICollectionView_YCHLayoutCacheCell_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UICollectionView_YCHLayoutCacheCell_Tests.framework; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51D555885F29C9397EF5E0AC87E5D85 /* Pods-UICollectionView-YCHLayoutCacheCell_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example.release.xcconfig"; sourceTree = "<group>"; };
 		ED05711EBAA5AAFAF7D4B5AB2DE47F49 /* Pods-UICollectionView-YCHLayoutCacheCell_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UICollectionView-YCHLayoutCacheCell_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F4D6FE2FB56F76F84C1DB405E2B820D0 /* Pods-UICollectionView-YCHLayoutCacheCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example.modulemap"; sourceTree = "<group>"; };
+		F4D6FE2FB56F76F84C1DB405E2B820D0 /* Pods-UICollectionView-YCHLayoutCacheCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-UICollectionView-YCHLayoutCacheCell_Example.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,23 +107,9 @@
 		156855D9AF1FC7342E5BC4BECF29C23F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BA0C0A88E3F9639433C501FE426B7EE1 /* UICollectionView-YCHLayoutCacheCell */,
+				C41C409E95ADB12495F48EF1D1D00543 /* UICollectionView-YCHLayoutCacheCell */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		3C9DC541EA6B1DDE02A5AF5BC413F7AC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				49C2A9190E59C7E79240ACDCF9A3507F /* Info.plist */,
-				2F38DA1581B4821DC04C4426B9CDBA98 /* UICollectionView-YCHLayoutCacheCell.modulemap */,
-				C72C7D8D314D328BB8FA439FE5A18B7E /* UICollectionView-YCHLayoutCacheCell.xcconfig */,
-				0872F861E2F83D4BE99B88B7645495B3 /* UICollectionView-YCHLayoutCacheCell-dummy.m */,
-				7F7B5085545B3B982135D2B52B8A956B /* UICollectionView-YCHLayoutCacheCell-prefix.pch */,
-				24E9B99678F0F62104104F2C7CD2D61B /* UICollectionView-YCHLayoutCacheCell-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/UICollectionView-YCHLayoutCacheCell";
 			sourceTree = "<group>";
 		};
 		525ED740DBE97CFA45837011AFB06010 /* Pods-UICollectionView-YCHLayoutCacheCell_Example */ = {
@@ -143,18 +130,18 @@
 			path = "Target Support Files/Pods-UICollectionView-YCHLayoutCacheCell_Example";
 			sourceTree = "<group>";
 		};
-		5B714D402068D40B4C8E2F336CDE8EFE /* Classes */ = {
+		629861FBC04B0785AEC7DEB5830FDCB2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				13ADEF791F53189700482078 /* YCHLayoutCacheCellMacros.h */,
-				13ADEF6C1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.h */,
-				13ADEF6D1F52B5EB00482078 /* UICollectionView+YCHIndexPathCache.m */,
-				13ADEF701F53004100482078 /* UICollectionView+YCHKeyedCache.h */,
-				13ADEF711F53004100482078 /* UICollectionView+YCHKeyedCache.m */,
-				13ADEF741F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.h */,
-				13ADEF751F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.m */,
+				9451CE8CD6876A17E5829F771FF9E714 /* Info.plist */,
+				17BA360DFB71CF7AF0F2810BF90EDC1C /* UICollectionView-YCHLayoutCacheCell.modulemap */,
+				89F7F968342A942668E0D2C99018DD83 /* UICollectionView-YCHLayoutCacheCell.xcconfig */,
+				C048A75025D5EBAA3AFE540D07BE52B7 /* UICollectionView-YCHLayoutCacheCell-dummy.m */,
+				11F4DD0581F6A4840DE2C9C757C3E0D3 /* UICollectionView-YCHLayoutCacheCell-prefix.pch */,
+				C6A99C3548AF2901C676AB67839B2405 /* UICollectionView-YCHLayoutCacheCell-umbrella.h */,
 			);
-			path = Classes;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/UICollectionView-YCHLayoutCacheCell";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -168,6 +155,21 @@
 			);
 			sourceTree = "<group>";
 		};
+		9DF8F1AE68DCAD0B0D46B0543B1ABC15 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				62CF21F89DF6DE4EEF2EF3E88E92F4B8 /* UICollectionView+YCHIndexPathCache.h */,
+				73078CE83DDF3A8C52E3B5895B0338DB /* UICollectionView+YCHIndexPathCache.m */,
+				8357A8809D018BE0797B15A904B6C3B8 /* UICollectionView+YCHKeyedCache.h */,
+				C3F8DF221C317E15A01AFC72F81D9B39 /* UICollectionView+YCHKeyedCache.m */,
+				0A06EC64481BFDB249F9C461854C09BA /* UICollectionView+YCHLayoutCacheCell.h */,
+				B0A6AA077FD6941CC2D541026CD8CBBB /* UICollectionView+YCHLayoutCacheCell.m */,
+				CA27037EC8CD0D06EE28FB46C39F44D3 /* YCHLayoutCacheCellMacros.h */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		B513605EB45115C84DD9FEED1AA809C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,16 +178,6 @@
 				487D5D21CFC54C9167E9E8CD9177D8FC /* UICollectionView_YCHLayoutCacheCell.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BA0C0A88E3F9639433C501FE426B7EE1 /* UICollectionView-YCHLayoutCacheCell */ = {
-			isa = PBXGroup;
-			children = (
-				5B714D402068D40B4C8E2F336CDE8EFE /* Classes */,
-				3C9DC541EA6B1DDE02A5AF5BC413F7AC /* Support Files */,
-			);
-			name = "UICollectionView-YCHLayoutCacheCell";
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -212,6 +204,16 @@
 			);
 			name = "Pods-UICollectionView-YCHLayoutCacheCell_Tests";
 			path = "Target Support Files/Pods-UICollectionView-YCHLayoutCacheCell_Tests";
+			sourceTree = "<group>";
+		};
+		C41C409E95ADB12495F48EF1D1D00543 /* UICollectionView-YCHLayoutCacheCell */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8F1AE68DCAD0B0D46B0543B1ABC15 /* Classes */,
+				629861FBC04B0785AEC7DEB5830FDCB2 /* Support Files */,
+			);
+			name = "UICollectionView-YCHLayoutCacheCell";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -242,22 +244,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9211B3731DC4F5FE53CAA1E56B5C07E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1829A425B1FA9FDFDE68A5E556193213 /* UICollectionView+YCHIndexPathCache.h in Headers */,
+				81702264AAE6D772DD19F9A88CEF5925 /* UICollectionView+YCHKeyedCache.h in Headers */,
+				966DF2673BE05B4BC06C4D3EA66D6EA6 /* UICollectionView+YCHLayoutCacheCell.h in Headers */,
+				F447DFAA0C991B0599B5EEB61341D335 /* UICollectionView-YCHLayoutCacheCell-umbrella.h in Headers */,
+				9CBD0402EF9B198B125F2E6460627389 /* YCHLayoutCacheCellMacros.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9405FC5E697B7F8450E485200EFEB317 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4B6B85892E4F513BC8888B892B165419 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-umbrella.h in Headers */,
-				13ADEF761F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.h in Headers */,
-				13ADEF721F53004100482078 /* UICollectionView+YCHKeyedCache.h in Headers */,
-				13ADEF6E1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4B95BFFAF7EE6C9F4B740CC1C9C6DC4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC157CDFE351F992F900D55440B5C8A9 /* UICollectionView-YCHLayoutCacheCell-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +271,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D75CCC034EDA1B240A363256FBAC607 /* Build configuration list for PBXNativeTarget "UICollectionView-YCHLayoutCacheCell" */;
 			buildPhases = (
-				82E1795655168DDB34C05CDFC8154FCA /* Sources */,
+				FF2F4151FFC7B3C950617D99981B9984 /* Sources */,
 				51D630582D312BFD7669605E0CCA7DC2 /* Frameworks */,
-				D4B95BFFAF7EE6C9F4B740CC1C9C6DC4 /* Headers */,
+				9211B3731DC4F5FE53CAA1E56B5C07E5 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -349,10 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13ADEF6F1F52B5EC00482078 /* UICollectionView+YCHIndexPathCache.m in Sources */,
 				B87F50519B47B759EFA3B2511A7E9A49 /* Pods-UICollectionView-YCHLayoutCacheCell_Example-dummy.m in Sources */,
-				13ADEF771F530E7300482078 /* UICollectionView+YCHLayoutCacheCell.m in Sources */,
-				13ADEF731F53004100482078 /* UICollectionView+YCHKeyedCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,11 +364,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82E1795655168DDB34C05CDFC8154FCA /* Sources */ = {
+		FF2F4151FFC7B3C950617D99981B9984 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96F1BD9B647379F71FC598DC80145BEE /* UICollectionView-YCHLayoutCacheCell-dummy.m in Sources */,
+				FB1B0472F1B60E592E6A6C13EADD8622 /* UICollectionView+YCHIndexPathCache.m in Sources */,
+				DAB99D626D102AB30D0CD1F415EF6883 /* UICollectionView+YCHKeyedCache.m in Sources */,
+				49029910725BB5B091639B4A160B15D1 /* UICollectionView+YCHLayoutCacheCell.m in Sources */,
+				6FEC31061DBBE2F25F1DC3A07D842E30 /* UICollectionView-YCHLayoutCacheCell-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +517,7 @@
 		};
 		9294DC4B4EC31C0B6D2F3B3DEE53FE9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C72C7D8D314D328BB8FA439FE5A18B7E /* UICollectionView-YCHLayoutCacheCell.xcconfig */;
+			baseConfigurationReference = 89F7F968342A942668E0D2C99018DD83 /* UICollectionView-YCHLayoutCacheCell.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -582,7 +585,7 @@
 		};
 		9FC071AC4BB1BA573FE62401A8103832 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C72C7D8D314D328BB8FA439FE5A18B7E /* UICollectionView-YCHLayoutCacheCell.xcconfig */;
+			baseConfigurationReference = 89F7F968342A942668E0D2C99018DD83 /* UICollectionView-YCHLayoutCacheCell.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -151,19 +151,15 @@ typedef NSMutableArray <NSMutableArray<NSValue *> *> YCHIndexPathSizesBySection;
 - (void)ych_registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier
 {
     [self ych_registerNib:nib forCellWithReuseIdentifier:identifier];
-    if (self.ych_indexPathCache.isAutomaticallyEnableed) {
-        UICollectionViewCell *tempCell = [[nib instantiateWithOwner:nil options:nil] lastObject];
-        self.tempCells[identifier] = tempCell;
-    }
+    UICollectionViewCell *tempCell = [[nib instantiateWithOwner:nil options:nil] lastObject];
+    self.tempCells[identifier] = tempCell;
 }
 
 - (void)ych_registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier
 {
     [self ych_registerClass:cellClass forCellWithReuseIdentifier:identifier];
-    if (self.ych_indexPathCache.isAutomaticallyEnableed) {
-        UICollectionViewCell *tempCell = [[cellClass alloc] initWithFrame:CGRectZero];
-        self.tempCells[identifier] = tempCell;
-    }
+    UICollectionViewCell *tempCell = [[cellClass alloc] initWithFrame:CGRectZero];
+    self.tempCells[identifier] = tempCell;
 }
 
 - (void)ych_reloadData
