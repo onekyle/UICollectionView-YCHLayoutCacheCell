@@ -8,9 +8,11 @@
 
 #import "YCHMainViewController.h"
 #import "UICollectionView+YCHLayoutCacheCell.h"
+#import "YCHFeedModel.h"
+#import "YCHFeedCell.h"
 
 @interface YCHMainViewController () <UICollectionViewDelegateFlowLayout>
-@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray<YCHFeedModel *> *dataArr;
 @end
 
 @implementation YCHMainViewController
@@ -20,16 +22,27 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[YCHFeedCell class] forCellWithReuseIdentifier:reuseIdentifier];
     self.collectionView.ych_enforceFrameLayout = YES;
     if ([self.collectionView respondsToSelector:@selector(setPrefetchingEnabled:)]) {
         self.collectionView.prefetchingEnabled = NO;
     }
-    
     _dataArr = [NSMutableArray array];
     int i = 0;
-    while (i != 100) {
-        [_dataArr addObject:[NSString stringWithFormat:@"Test title : %d",i++]];
+    NSArray *titlesArray = @[@"BTC",@"ETC",@"QTUM"];
+    NSArray *contentTextArray = @[
+                                  @"test1",
+                                  @"test2",
+                                  @"test3",
+                                  ];
+    NSArray *iconsArray = @[];
+    while (i != 20) {
+        i++;
+        YCHFeedModel *model = [YCHFeedModel new];
+        model.title = titlesArray[arc4random() % titlesArray.count];
+        model.text = contentTextArray[arc4random() % contentTextArray.count];
+//        model.icon = iconsArray[arc4random() % iconsArray.count];
+        [_dataArr addObject:model];
     }
     
 }
@@ -47,8 +60,10 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [collectionView ych_sizeForCellWithIdentifier:reuseIdentifier forIndexPath:indexPath fixedValue:self.view.bounds.size.width calculateType:YCHLayoutCacheCellCalculateTypeWith configuration:^(id cell) {
-        
+    NSLog(@"load height for cell : %@",indexPath);
+    __weak typeof(self) weakSelf = self;
+    return [collectionView ych_sizeForCellWithIdentifier:reuseIdentifier forIndexPath:indexPath fixedValue:self.view.bounds.size.width calculateType:YCHLayoutCacheCellCalculateTypeWith configuration:^(YCHFeedCell *cell) {
+        cell.model = weakSelf.dataArr[indexPath.item];
     }];
 }
 
@@ -59,9 +74,9 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    cell.backgroundColor = [self randomColor];
+//    NSLog(@"has loaded cell for index: %@",indexPath);
+    YCHFeedCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.model = self.dataArr[indexPath.item];
     
     return cell;
 }
