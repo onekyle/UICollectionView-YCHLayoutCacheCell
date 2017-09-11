@@ -30,7 +30,10 @@
         
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.textAlignment = NSTextAlignmentLeft;
+        _contentLabel.numberOfLines = 0;
         [self.contentView addSubview:_contentLabel];
+        
+        self.backgroundColor = [UIColor whiteColor];
         
     }
     return self;
@@ -47,7 +50,12 @@
 {
     _titleLabel.frame = CGRectMake(15, 10, 80, 20);
     if (_iconImgView.image) {
-        _iconImgView.frame = CGRectMake(15, 40, _iconImgView.image.size.width, _iconImgView.image.size.height);
+        CGFloat maxImgW = size.width - 30;
+        if (_iconImgView.image.size.width > maxImgW) {
+            _iconImgView.frame = CGRectMake(15, 40, maxImgW, _iconImgView.image.size.height / _iconImgView.image.size.width * maxImgW);
+        } else {
+            _iconImgView.frame = CGRectMake(15, 40, _iconImgView.image.size.width, _iconImgView.image.size.height);
+        }
     } else {
         _iconImgView.frame = _titleLabel.frame;
     }
